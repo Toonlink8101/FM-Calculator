@@ -15,13 +15,10 @@ breakthetargets#0888
 
 */
 
+#include <stdlib.h>
 #include <iostream>
 #include <vector>
-#include <Suboctave_SSGEG_Calc.hpp>
-
-using namespace std;
-using std::cout;
-using std::cin;
+#include "include/Suboctave_SSGEG_Calc.hpp"
 
 // 10 bits = 0-1023
 const unsigned int VOLUME_MAX = 0b1111111111;
@@ -74,6 +71,10 @@ const unsigned int attenuationIncrementValues[(RATE_MAX + 1) * 8] = {
    4,4,4,4,4,4,4,4,  4,4,4,8,4,4,4,8,  4,8,4,8,4,8,4,8,  4,8,8,8,4,8,8,8,  // 56 - 59
    8,8,8,8,8,8,8,8,  8,8,8,8,8,8,8,8,  8,8,8,8,8,8,8,8,  8,8,8,8,8,8,8,8,  // 60 - 63
 };
+
+using namespace std;
+using std::cout;
+using std::cin;
 
 int main(void) {
 

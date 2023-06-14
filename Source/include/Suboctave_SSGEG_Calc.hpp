@@ -17,8 +17,6 @@ breakthetargets#0888
 
 #pragma once
 
-#include <Suboctave_SSGEG_Calc.hpp>
-
 struct ADSRvalues {
     unsigned int 
         attack = 0, 
