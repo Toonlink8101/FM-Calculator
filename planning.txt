@@ -1,3 +1,4 @@
+For echo calc (or just combining two note columns into one via FM stuff):
 - get tracker data from clipboard
 - extract header and note names from data
 - convert note names to values
@@ -15,4 +16,17 @@
     - determine "gcf" note
     - output all data to an object
 - use header and object list to generate pattern data
+- copy pattern data to clipboard
+
+For SSG-EG calc:
+- get tracker data from clipboard
+- extract header and note names from data
+- convert note names to frequency values
+- FOR EACH ROW:
+    - find optimal ssg-eg settings for desired frequency
+    - if optimal settings are too detuned, increment a warning counter
+    - output settings as effects
+    - store effects in object
+- use header and object list to generate pattern data
+- output the number of notes that raised a warning
 - copy pattern data to clipboard
