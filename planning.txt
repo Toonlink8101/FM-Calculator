@@ -1,18 +1,18 @@
-1. get tracker data from clipboard
-2. extract header and note names from data
-3. convert note names to values
-4. FOR EACH ROW:
-    a. handle non-notes
-        i. if same do the same
-        ii. if a (note/macro) release is present, do a macro release
-        iii. if a note off/release is present
-            1. if both non-notes, do an EC01
-            2. else (note + off), change instrument to opmask the "off" note
-        iv. set ratio to take previous note into account
-    b. set instrument to no opmasks
-    c. determine note ratio
-    d. determine tuning from ratio
-    e. determine "gcf" note
-    f. output all data to an object
-5. use header and object list to generate pattern data
-6. copy pattern data to clipboard
+- get tracker data from clipboard
+- extract header and note names from data
+- convert note names to values
+- FOR EACH ROW:
+    - handle non-notes
+        - if same do the same
+        - if a (note/macro) release is present, do a macro release
+        - if a note off/release is present
+            - if both non-notes, do an EC01
+            - else (note + off), change instrument to opmask the "off" note
+        - set ratio to take previous note into account
+    - set instrument to no opmasks
+    - determine note ratio
+    - determine tuning from ratio
+    - determine "gcf" note
+    - output all data to an object
+- use header and object list to generate pattern data
+- copy pattern data to clipboard
