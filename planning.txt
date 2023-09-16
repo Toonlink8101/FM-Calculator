@@ -11,14 +11,14 @@ For echo calc (or just combining two note columns into one via FM stuff):
             - else (note + off), change instrument to opmask the "off" note
         - set ratio to take previous note into account
     - set instrument to no opmasks
-    - determine "gcf" note
-        -numpy.gcd(x, y)    //idea but not reliable. 12TET tuning does not like this
     - determine note ratio
-        - divide each by gcd
-        - if either is outside of range, then out a warning of some kind
-        - otherwise output the ratio between the notes
+        - use difference2note; otherwise, it's just too complicated
     - determine tuning from ratio
-        - Reuse parts of FM_Interval_Calculator
+        - use multiple2tuning
+        - average the results from each multiplier value
+    - determine "gcf" note
+        //-numpy.gcd(x, y)    //idea but not reliable. 12TET tuning does not like this
+        - use difference2note; otherwise, it's just too complicated
     - output all data to an object
 - use header and object list to generate pattern data
 - copy pattern data to clipboard
