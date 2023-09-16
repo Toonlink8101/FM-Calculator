@@ -12,7 +12,7 @@ For echo calc (or just combining two note columns into one via FM stuff):
         - set ratio to take previous note into account
     - set instrument to no opmasks
     - determine "gcf" note
-        -numpy.gcd(x, y)
+        -numpy.gcd(x, y)    //idea but not reliable. 12TET tuning does not like this
     - determine note ratio
         - divide each by gcd
         - if either is outside of range, then out a warning of some kind
