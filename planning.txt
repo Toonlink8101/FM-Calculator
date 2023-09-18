@@ -27,11 +27,22 @@ For SSG-EG calc:
 - get tracker data from clipboard
 - extract header and note names from data
 - convert note names to frequency values
+    - convert note name to note value
+        - use NoteValueConverter() here
+    - convert note value to frequency
+        - f = frequency; f0 = reference frequency; n is the number of semitones
+        - f = f0 * 2 ^ (n / 12)
+            - Source: https://www.reddit.com/r/musictheory/comments/j3q0i3/how_can_you_calculate_the_frequency_of_a_given/g7dnag5/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+        - f0 = 440 # hz for A4
+        - n = note_value + 57 # 57 is the note value for A4
 - FOR EACH ROW:
     - find optimal ssg-eg settings for desired frequency
-    - if optimal settings are too detuned, increment a warning counter
+        - sort results in order of lowest difference in decay values
+        - sub-sort that in order of sustain closest to 7
+        - The best option should have the lowest difference with the middlest sustain
+    - if optimal settings are too detuned/distored, increment the respective warning counter
     - output settings as effects
     - store effects in object
 - use header and object list to generate pattern data
-- output the number of notes that raised a warning
+- output the number of each warning type raised
 - copy pattern data to clipboard
